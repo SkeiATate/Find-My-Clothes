@@ -12,4 +12,12 @@ spring:
      url: jdbc:mysql://localhost:3306/myclothes
      username: root
      password: root
+#   thymeleaf
+  thymeleaf:
+    cache: false
 
+  #JPA
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true

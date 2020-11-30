@@ -1,9 +1,17 @@
 package com.skeiatate.entity;
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+/**
+ * @author SkeiATate
+ *
+ * 用户实体类
+ */
 @Entity
+@Data
 @Table(name = "tb_user")
 public class User {
     @Id
@@ -11,32 +19,10 @@ public class User {
     private int id;
 
     @Column
-    private String userNaem;
+    //用户名
+    private String userName;
 
-    @Column
+    @Column()
+    //密码
     private String password;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getUserNaem() {
-        return userNaem;
-    }
-
-    public void setUserNaem(String userNaem) {
-        this.userNaem = userNaem;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
