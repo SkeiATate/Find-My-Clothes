@@ -1,0 +1,23 @@
+#server
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
+#数据库
+spring:
+  datasource:
+#   hikari:
+     driver-class-name: com.mysql.jdbc.Driver
+     url: jdbc:mysql://localhost:3306/myclothes
+     username: root
+     password: root
+#   thymeleaf
+  thymeleaf:
+    cache: false
+
+  #JPA
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
