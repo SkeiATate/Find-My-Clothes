@@ -1,6 +1,6 @@
 package com.skeiatate.repository;
 
-import com.skeiatate.entity.Clothes;
+import com.skeiatate.entity.Color;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * @date 2020/11/30
  */
 @Repository
-public interface ClothesRepository extends JpaRepository<Clothes, Integer>, JpaSpecificationExecutor<Clothes> {
+public interface ColorRepository extends JpaRepository<Color,Integer> , JpaSpecificationExecutor<Color> {
 }

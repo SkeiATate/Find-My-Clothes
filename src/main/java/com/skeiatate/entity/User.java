@@ -1,8 +1,6 @@
 package com.skeiatate.entity;
 
 
-import lombok.Data;
-
 import javax.persistence.*;
 
 /**
@@ -11,7 +9,6 @@ import javax.persistence.*;
  * 用户实体类
  */
 @Entity
-@Data
 @Table(name = "tb_user")
 public class User {
     @Id
@@ -25,4 +22,37 @@ public class User {
     @Column()
     //密码
     private String password;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
 }
