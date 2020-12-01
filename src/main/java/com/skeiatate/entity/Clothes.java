@@ -22,13 +22,19 @@ public class Clothes {
     // 衣物名称,后面用于模糊搜索
     private String title;
 
-    @Column
-    @ManyToMany(fetch = FetchType.EAGER)
-    //颜色描述
+    @ManyToMany(targetEntity = ClothesColor.class, cascade = CascadeType.ALL)
+    @JoinTable(name = "tb_clothes_colors",
+            joinColumns = {@JoinColumn(name = "clothes_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "colors_id", referencedColumnName = "id")})
+    /**
+     * 颜色描述
+     */
     private List<ClothesColor> colors;
 
     @Column
-    //衣物的位置
+    /**
+     *衣物的位置
+     */
     private String location;
 
     @Column

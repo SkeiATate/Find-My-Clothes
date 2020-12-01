@@ -19,11 +19,14 @@ public class ClothesColor {
     private Integer id;
 
     @Column
-    //颜色名称
+    /**
+     *颜色名称
+     */
     private String colorName;
 
-    @Column
-    @OneToMany(fetch = FetchType.EAGER)
-    //颜色下包含的衣服
+    @ManyToMany(mappedBy = "colors")
+    /**
+     *颜色下包含的衣服
+     */
     private List<Clothes> clothesList;
 }
