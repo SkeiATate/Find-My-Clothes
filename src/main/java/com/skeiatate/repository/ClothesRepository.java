@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * @date 2020/11/30
  */
 @Repository
-public interface ClothesRepository extends JpaRepository<Clothes, Integer>, JpaSpecificationExecutor<Clothes> {
+public interface ClothesRepository extends JpaRepository<Clothes, Integer> {
 }

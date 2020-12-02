@@ -12,22 +12,23 @@ import javax.persistence.*;
 @Table(name = "tb_user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @Column
+    @Column(name = "user_name")
     //用户名
     private String userName;
 
-    @Column()
+    @Column(name = "password")
     //密码
     private String password;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

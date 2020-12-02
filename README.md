@@ -21,6 +21,12 @@
 
 ## 项目技术栈
 
-spring-boot+JPA+FastDFS+Redis
+spring-boot+JPA+FastDFS+Redis+thymeleaf
 
 数据库:MySQL
+
+至于我为什么要用JPA,是因为正好学习一下,应用起来
+
+免得找工作时候不会,因为之前面试一家国企的时候,就被问到了JPA,我是一个连Hibernate都没用过的人,自然就答不上来了😑
+
+后来由于工作忙,没时间顾及,不过现在至少我必须做完这个项目

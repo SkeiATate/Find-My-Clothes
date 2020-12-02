@@ -14,16 +14,20 @@ import java.util.List;
 public class Color {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
+    @Column(name = "color_name")
     /**
      *颜色名称
      */
     private String colorName;
 
-    @ManyToMany(mappedBy = "colors")
+    @OneToMany(targetEntity = Clothes.class,fetch = FetchType.EAGER)
+    @JoinTable(name = "tb_clothes_colors",
+    joinColumns = @JoinColumn(name = "colors_id",referencedColumnName = "id"),
+    inverseJoinColumns = @JoinColumn(name = "clothes_id",referencedColumnName = "id"))
     /**
      *颜色下包含的衣服
      */

@@ -14,14 +14,15 @@ import java.util.List;
 @Table(name = "tb_clothes")
 public class Clothes {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-    @Column
+    @Column(name = "title")
     // 衣物名称,后面用于模糊搜索
     private String title;
 
-    @ManyToMany(targetEntity = Color.class)
+    @OneToMany(targetEntity = Color.class,fetch = FetchType.EAGER)
     @JoinTable(name = "tb_clothes_colors",
             joinColumns = {@JoinColumn(name = "clothes_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "colors_id", referencedColumnName = "id")})
@@ -30,21 +31,17 @@ public class Clothes {
      */
     private List<Color> colors;
 
-    @Column
+    @Column(name = "location")
     /**
      *衣物的位置
      */
     private String location;
 
-    @Column
+    @Column(name = "img")
     //衣物的图片路径,重点会处理这部分
     private String img;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

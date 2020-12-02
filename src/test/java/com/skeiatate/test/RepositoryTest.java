@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author SkeiATate
@@ -32,23 +33,29 @@ public class RepositoryTest {
     @Test
     @Transactional
     @Rollback(false)
-    public void addTest(){
+    public void addAllTest() {
         Clothes clothes = new Clothes();
         clothes.setTitle("黄色毛衣");
         clothes.setLocation("阳台衣柜左侧中层");
         clothes.setImg("图片地址");
-        List<Color> colors = clothes.getColors();
         Color color = new Color();
         color.setColorName("黄色");
 
         clothes.getColors().add(color);
         color.getClothesList().add(clothes);
 
-        Clothes clothes1 = clothesRepository.save(clothes);
-        Color color1 = colorRepository.save(color);
-
-        System.out.println(clothes1);
-        System.out.println(color1);
+        clothesRepository.save(clothes);
+        colorRepository.save(color);
 
     }
+
+    @Test
+     public void findTest(){
+         Color color = new Color();
+         color.setId(1);
+
+         Optional<Color> byId = colorRepository.findById(1);
+         Color color1 = byId.get();
+         System.out.println(color1);
+     }
 }

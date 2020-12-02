@@ -10,5 +10,5 @@ import org.springframework.stereotype.Repository;
  * @date 2020/11/30
  */
 @Repository
-public interface ColorRepository extends JpaRepository<Color,Integer> , JpaSpecificationExecutor<Color> {
+public interface ColorRepository extends JpaRepository<Color, Integer> {
 }
